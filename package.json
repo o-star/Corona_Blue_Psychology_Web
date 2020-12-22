@@ -8,7 +8,6 @@
     "npm": "6.x"
   },
   "scripts": {
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm run build",
     "start": "node index.js",
     "server": "node index",
     "front": "npm start --prefix client",
