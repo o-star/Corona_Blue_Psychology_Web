@@ -14,39 +14,19 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/work
 
 const useStyles = makeStyles(styles);
 
-export default function WorkSection() {
+export default function InquirySection() {
   const classes = useStyles();
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Inquiry Board</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            웹 페이지와 관련하여 문의 사항이나 수정해야할 사항이 있다면, 자유롭게 의견을 남겨주세요<br/>
+            여러분의 의견이 더 나은 서비스를 만듭니다. 감사합니다!
           </h4>
           <form>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Email"
-                  id="email"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
               <CustomInput
                 labelText="Your Message"
                 id="message"

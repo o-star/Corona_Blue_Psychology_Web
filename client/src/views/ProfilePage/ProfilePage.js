@@ -47,7 +47,7 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
+        brand="OVERCOMING CORONA"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -56,13 +56,14 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+      <Parallax small filter image={require("assets/img/testimage.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
+                  <br/><br/><br/><br/><br/>
                   <div>
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>

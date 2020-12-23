@@ -72,35 +72,21 @@ export default function SectionBasics() {
     <div className={classes.sections}>
       <div className={classes.container}>
         <div className={classes.title}>
-          <h2 style={{fontWeight:"bold"}}>코로나 블루란?</h2>
+          <h2 style={{fontWeight:"bold"}}>Corona Blue?</h2>
         </div>
         <div id="buttons">
           <div className={classes.title}>
-            <h3>
+            <h3 style={{fontStyle:"inherit"}}>
               <small>'코로나19'와 '우울감(blue)'이 합쳐진 신조어로, 
                 코로나19 확산으로 일상에 변화가 닥치면서 생긴 우울감과 무기력증을 뜻한다.</small>
             </h3>
           </div>
-          {/* <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={8}>
-              <Button color="primary">Default</Button>
-              <Button color="primary" round>
-                round
-              </Button>
-              <Button color="primary" round>
-                <Favorite className={classes.icons} /> with icon
-              </Button>
-              <Button justIcon round color="primary">
-                <Favorite className={classes.icons} />
-              </Button>
-              <Button color="primary" simple>
-                simple
-              </Button>
-            </GridItem>
-          </GridContainer> */}
+          <br/>
+          <br/>
+          <br/>
           <div className={classes.title}>
             <h3>
-              <small>Pick your size</small>
+              Select a service to use
             </h3>
           </div>
           <GridContainer justify="center">
@@ -116,18 +102,18 @@ export default function SectionBasics() {
           </GridContainer>
           <div className={classes.title}>
             <h3>
-              <small>Pick your color</small>
+              <small>코로나</small>
             </h3>
           </div>
           <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={8}>
+            <GridItem xs={16} sm={16} md={16} justify="center">
               <Button>Default</Button>
-              <Button color="primary">Primary</Button>
-              <Button color="info">Info</Button>
+              <Button color="primary" size="lg">Primary</Button>
+              {/* <Button color="info">Info</Button> */}
               <Button color="success">Success</Button>
-              <Button color="warning">Warning</Button>
+              {/* <Button color="warning">Warning</Button> */}
               <Button color="danger">Danger</Button>
-              <Button color="rose">Rose</Button>
+              {/* <Button color="rose">Rose</Button> */}
             </GridItem>
           </GridContainer>
         </div>
