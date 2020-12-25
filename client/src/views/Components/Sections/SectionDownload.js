@@ -35,7 +35,7 @@ export default function SectionDownload() {
             </h4>
           </GridItem>
           <GridItem xs={12} sm={8} md={6}>
-            <Link to="/profile-page">
+            <Link to="/test-page">
               <Button
                 color="primary"
                 size="lg"

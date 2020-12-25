@@ -1,10 +1,15 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
-const path = require('path');
+const path = require('path')
+const bodyParser = require('body-parser')
 
-app.get('/api', (req, res) => {
-    res.send({title:"ostar !"});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
+
+app.post('/test-page', (req, res) => {
+  console.log("!");
+  res.send(req.body.number);
 })
 
 app.listen(port, () => {
