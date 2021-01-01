@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
 app.post('/test-page', (req, res) => {
-  console.log("!");
+  console.log(req);
   res.send(req.body.number);
 })
 
