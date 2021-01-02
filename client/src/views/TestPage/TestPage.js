@@ -11,6 +11,7 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
+import TestResult from "./TestResult.js"
 
 import circleimg from "assets/img/circle_image.jpg";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
@@ -20,10 +21,9 @@ import { questiontable, replytable } from "./TestItemTable.js"
 const useStyles = makeStyles(styles);
 
 
-export default function TestPage(props) {
+export default function TestPage({ addScore, setScore, resetScore }) {
   const [number, setNumber] = useState(1);
   const classes = useStyles();
-  const { ...rest } = props;
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
@@ -44,10 +44,58 @@ export default function TestPage(props) {
     margin: "3px auto",
     textAlign: "center"
   }
-  const clickEvent = () => {
-    setNumber(number + 1);
-  }
-  // const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  let testComp;
+  if (number === 1 && setScore() > 0) resetScore();
+  if (number >= questiontable.length) testComp = <TestResult score={setScore()} />;
+  else
+    testComp = <div className={classes.container}>
+      <GridContainer justify="center">
+        <GridItem xs={12} sm={12} md={6}>
+          <div className={classes.profile}>
+            <br />
+            <div className={classes.textCenter} justify="center">
+              <h2>코로나 블루 우울 심리 테스트</h2>
+            </div>
+            <br /><br /><br /><br /><br />
+            <div>
+              <img src={circleimg} alt="..." className={imageClasses} />
+            </div>
+          </div>
+        </GridItem>
+      </GridContainer>
+      <div className={classes.description}>
+        <h3>
+          {questiontable[number]}
+        </h3>
+      </div>
+      <GridContainer justify="center">
+        <GridItem style={gridStyle}>
+          <Button onClick={() => {
+            addScore(0);
+            setNumber(number + 1);
+          }} style={btnStyle}>{replytable[number][0]}</Button>
+        </GridItem>
+        <GridItem style={gridStyle}>
+          <Button onClick={() => {
+            addScore(1);
+            setNumber(number + 1);
+          }} style={btnStyle}>{replytable[number][1]}</Button>
+        </GridItem>
+        <GridItem style={gridStyle}>
+          <Button onClick={() => {
+            addScore(2);
+            setNumber(number + 1);
+          }} style={btnStyle}>{replytable[number][2]}</Button>
+        </GridItem>
+        <GridItem style={gridStyle}>
+          <Button onClick={() => {
+            addScore(3);
+            setNumber(number + 1);
+          }} style={btnStyle}>{replytable[number][3]}</Button>
+        </GridItem>
+      </GridContainer>
+    </div>
+
   return (
     <div>
       <Header
@@ -59,46 +107,11 @@ export default function TestPage(props) {
           height: 200,
           color: "white"
         }}
-        {...rest}
       />
       <Parallax small filter image={require("assets/img/testimage.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
-          <div className={classes.container}>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.profile}>
-                  <br />
-                  <div className={classes.textCenter} justify="center">
-                    <h2>코로나 블루 우울 심리 테스트</h2>
-                  </div>
-                  <br /><br /><br /><br /><br />
-                  <div>
-                    <img src={circleimg} alt="..." className={imageClasses} />
-                  </div>
-                </div>
-              </GridItem>
-            </GridContainer>
-            <div className={classes.description}>
-              <h3>
-                {questiontable[number]}
-              </h3>
-            </div>
-            <GridContainer justify="center">
-              <GridItem style={gridStyle}>
-                <Button onClick={clickEvent} style={btnStyle}>{replytable[number][0]}</Button>
-              </GridItem>
-              <GridItem style={gridStyle}>
-                <Button onClick={clickEvent} style={btnStyle}>{replytable[number][1]}</Button>
-              </GridItem>
-              <GridItem style={gridStyle}>
-                <Button onClick={clickEvent} style={btnStyle}>{replytable[number][2]}</Button>
-              </GridItem>
-              <GridItem style={gridStyle}>
-                <Button onClick={clickEvent} style={btnStyle}>{replytable[number][3]}</Button>
-              </GridItem>
-            </GridContainer>
-          </div>
+          {testComp}
           <br /><br />
         </div>
       </div>
