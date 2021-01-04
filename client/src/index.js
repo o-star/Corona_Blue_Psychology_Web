@@ -7,6 +7,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import Components from "views/Components/Components.js";
 import IntroPage from "views/Introduction/IntroPage.js";
 import TestPage from "views/TestPage/TestPage.js";
+import OvercomePage from "views/Overcome/OvercomePage.js"
 
 var hist = createBrowserHistory();
 let score = 0;
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/intro-page" component={IntroPage} />
       <Route path="/test-page" render={() => <TestPage addScore={addScore} setScore={setScore} resetScore={resetScore} />} />
+      <Route path="/overcome-page" component={OvercomePage} />
       <Route path="/" component={Components} />
     </Switch>
   </Router>,

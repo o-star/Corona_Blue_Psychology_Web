@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+// import GridItem from "components/Grid/GridItem.js";
 import Small from "components/Typography/Small.js";
 import Danger from "components/Typography/Danger.js";
 import Warning from "components/Typography/Warning.js";
@@ -16,7 +16,7 @@ import Primary from "components/Typography/Primary.js";
 import Muted from "components/Typography/Muted.js";
 import Quote from "components/Typography/Quote.js";
 
-import image from "assets/img/faces/avatar.jpg";
+import method1 from "assets/img/method1.png";
 
 import styles from "assets/jss/material-kit-react/views/componentsSections/typographyStyle.js";
 
@@ -24,41 +24,35 @@ const useStyles = makeStyles(styles);
 
 export default function SectionTypography() {
   const classes = useStyles();
+  const imgstyle = {
+    height: '300px'
+  }
+
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <div id="typography">
           <div className={classes.title}>
-            <h2>Typography</h2>
+            <h1>How To Ovecome Corona Blue ? ?</h1>
+            <br/>
           </div>
-          <GridContainer>
+          <GridContainer style={{textAlign:'center'}}>
             <div className={classes.typo}>
-              <div className={classes.note}>Header 1</div>
-              <h1>The Life of Material Kit</h1>
+              <h2 className={classes.content}>불확실한 소문과 정보에 흔들리지 않기</h2>
             </div>
-            <div className={classes.typo}>
-              <div className={classes.note}>Header 2</div>
-              <h2>The Life of Material Kit</h2>
-            </div>
-            <div className={classes.typo}>
-              <div className={classes.note}>Header 3</div>
-              <h3>The Life of Material Kit</h3>
-            </div>
-            <div className={classes.typo}>
-              <div className={classes.note}>Header 4</div>
-              <h4>The Life of Material Kit</h4>
-            </div>
-            <div className={classes.typo}>
-              <div className={classes.note}>Header 5</div>
-              <h5>The Life of Material Kit</h5>
-            </div>
-            <div className={classes.typo}>
-              <div className={classes.note}>Header 6</div>
-              <h6>The Life of Material Kit</h6>
-            </div>
-            <div className={classes.typo}>
-              <div className={classes.note}>Header 1</div>
-              <h1 className={classes.title}>The Life of Material Kit</h1>
+            <div style={{width:'100%'}}>
+              <img
+                src={method1}
+                alt="..."
+                style={imgstyle}
+                className={
+                  classes.imgRaised +
+                  " " +
+                  classes.imgRounded +
+                  " " +
+                  classes.imgFluid
+                }
+              />
             </div>
             <div className={classes.typo}>
               <div className={classes.note}>Header 2</div>
@@ -141,61 +135,6 @@ export default function SectionTypography() {
             </div>
           </GridContainer>
         </div>
-        <div className={classes.space50} />
-        <div id="images">
-          <div className={classes.title}>
-            <h2>Images</h2>
-          </div>
-          <br />
-          <GridContainer>
-            <GridItem xs={12} sm={2}>
-              <h4>Rounded Image</h4>
-              <img
-                src={image}
-                alt="..."
-                className={classes.imgRounded + " " + classes.imgFluid}
-              />
-            </GridItem>
-            <GridItem xs={12} sm={2} className={classes.marginLeft}>
-              <h4>Circle Image</h4>
-              <img
-                src={image}
-                alt="..."
-                className={classes.imgRoundedCircle + " " + classes.imgFluid}
-              />
-            </GridItem>
-            <GridItem xs={12} sm={2} className={classes.marginLeft}>
-              <h4>Rounded Raised</h4>
-              <img
-                src={image}
-                alt="..."
-                className={
-                  classes.imgRaised +
-                  " " +
-                  classes.imgRounded +
-                  " " +
-                  classes.imgFluid
-                }
-              />
-            </GridItem>
-            <GridItem xs={12} sm={2} className={classes.marginLeft}>
-              <h4>Circle Raised</h4>
-              <img
-                src={image}
-                alt="..."
-                className={
-                  classes.imgRaised +
-                  " " +
-                  classes.imgRoundedCircle +
-                  " " +
-                  classes.imgFluid
-                }
-              />
-            </GridItem>
-          </GridContainer>
-          <GridContainer />
-        </div>
-        <div className={classes.space50} />
       </div>
     </div>
   );

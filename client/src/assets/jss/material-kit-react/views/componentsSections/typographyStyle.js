@@ -17,8 +17,13 @@ const typographyStyle = {
     minHeight: "32px",
     textDecoration: "none"
   },
+  content: {
+    color: "#3C4858",
+    marginTop: "30px",
+    minHeight: "32px",
+    textDecoration: "none"
+  },
   typo: {
-    paddingLeft: "25%",
     marginBottom: "40px",
     position: "relative",
     width: "100%"

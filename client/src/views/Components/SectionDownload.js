@@ -63,7 +63,7 @@ export default function SectionDownload() {
                 페이지 소개
             </Button>
             </Link>
-            <Link to='/intro-page'>
+            <Link to='/overcome-page'>
               <Button
                 color="rose"
                 size="lg"
