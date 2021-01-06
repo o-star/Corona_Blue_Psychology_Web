@@ -44,6 +44,11 @@ const typographyStyle = {
   marginLeft: {
     marginLeft: "auto !important"
   },
+  divstyle: {
+    width: "100%",
+    marginBottom: '50px',
+    marginTop: '50px'
+  },
   ...imagesStyles
 };
 
